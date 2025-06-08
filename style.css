@@ -1,78 +1,76 @@
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     color: #333;
-    padding: 20px;
 }
 
 header {
-    background: #002244;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    background: #0d1b2a;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-header h1 {
-    margin-bottom: 10px;
-}
-
-nav {
-    background: #004080;
-    padding: 10px 0;
-    text-align: center;
+.logo {
+    height: 60px;
 }
 
 nav ul {
     list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
+nav a {
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+}
+
+nav .btn {
+    background: #e0a800;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.hero {
+    background: #1d3557;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 section {
-    padding: 20px 0;
-    margin: 20px 0;
-    border-bottom: 1px solid #ccc;
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: auto;
 }
 
 h2 {
-    margin-bottom: 10px;
-    color: #004080;
+    margin-bottom: 20px;
+    color: #1d3557;
 }
 
 ul {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #004080;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-left: 20px;
+    list-style: disc;
 }
 
 footer {
+    background: #0d1b2a;
+    color: white;
     text-align: center;
-    padding: 10px 0;
-    background: #002244;
-    color: #fff;
-    margin-top: 20px;
+    padding: 15px;
+    font-size: 0.9em;
 }
