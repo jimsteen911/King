@@ -1,54 +1,42 @@
 // chatbot.js
+// chatbot.js
 const chatLog = document.getElementById("chat-log");
 const inputField = document.getElementById("chat-input");
 const sendBtn = document.getElementById("send-btn");
 
-const apiKey = "YOUR_OPENAI_API_KEY";  // Replace with secure backend proxy later
-
 async function sendMessage() {
-    const userMessage = inputField.value.trim();
-    if (!userMessage) return;
+    const userInput = inputField.value.trim();
+    if (!userInput) return;
 
-    appendMessage("You", userMessage);
+    appendMessage("You", userInput);
     inputField.value = "";
 
-    const messages = [
-        { role: "system", content: "You are a helpful assistant for a construction and contracting business." },
-        { role: "user", content: userMessage }
-    ];
-
     try {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        const res = await fetch("https://your-replit-url.repl.co/api/chat", {
             method: "POST",
-            headers: {
-                "Authorization": `Bearer ${apiKey}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                model: "gpt-4",
-                messages: messages
-            })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ user_input: userInput })
         });
 
-        const data = await response.json();
-        const reply = data.choices?.[0]?.message?.content || "No response.";
-        appendMessage("AI", reply);
-
+        const data = await res.json();
+        appendMessage("Assistant", data.reply || "No response.");
     } catch (err) {
         console.error(err);
-        appendMessage("AI", "There was an error connecting to OpenAI.");
+        appendMessage("Assistant", "❌ Error reaching assistant.");
     }
 }
 
-function appendMessage(sender, message) {
+function appendMessage(sender, text) {
     const msg = document.createElement("div");
     msg.className = "chat-message";
-    msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
     chatLog.appendChild(msg);
     chatLog.scrollTop = chatLog.scrollHeight;
 }
 
 sendBtn.addEventListener("click", sendMessage);
-inputField.addEventListener("keypress", (e) => {
+inputField.addEventListener("keydown", (e) => {
     if (e.key === "Enter") sendMessage();
 });
+
+
