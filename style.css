@@ -125,5 +125,20 @@ header {
 .quote-container .invalid + .error-message {
     display: block;
 }
+/* constrain all logo.png instances */
+.logo-image img,
+.quote-container .logo img {
+  max-width: 150px;    /* cap at 150px wide—you can lower if needed */
+  width: 100%;         /* scale down on narrow viewports */
+  height: auto;        /* preserve aspect ratio */
+  display: block;      /* margin auto will center it */
+  margin: 0 auto 20px; /* center + bottom spacing */
+}@media (max-width: 480px) {
+  .logo-image img,
+  .quote-container .logo img {
+    max-width: 100px;
+    margin-bottom: 16px;
+  }
+}
 /* ── Footer & Misc ─────────────────────────────────────────────────────── */
 /* … include your footer and any remaining styles … */
