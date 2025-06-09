@@ -102,7 +102,7 @@
 <div class="container">
   <!-- Logo -->
   <div class="logo">
-    <img src="img/20250608202842.png" alt="King David Contracting Logo">
+    <img src="logo.png" alt="King David Contracting Logo">
   </div>
 
   <form id="quoteForm" action="8db460e72bc38d41e393c27cb429f0a5" method="POST" novalidate>
