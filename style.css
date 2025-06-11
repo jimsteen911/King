@@ -1,144 +1,76 @@
-/* ── Google Font ─────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* ── Global Resets & Base ───────────────────────────────────────────────── */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f5f5f5;
     color: #333;
-    overflow-x: hidden;
 }
-/* ── Layout Container ───────────────────────────────────────────────────── */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-/* ── Header ─────────────────────────────────────────────────────────────── */
+
 header {
-    background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+    background: #0d1b2a;
+    padding: 20px;
     color: white;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
-/* … (include all your existing header/nav styles here) … */
-/* ── Hero ───────────────────────────────────────────────────────────────── */
-.hero { /* your existing hero styles */ }
-/* ── Services ───────────────────────────────────────────────────────────── */
-.services { /* your existing services styles */ }
-/* ── About ──────────────────────────────────────────────────────────────── */
-.about { /* your existing about styles */ }
-/* ── Contact (Quote Form) ───────────────────────────────────────────────── */
-.quote-container {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    padding: 30px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+.logo {
+    height: 60px;
 }
-.quote-container .logo {
-    text-align: center;
-    margin-bottom: 20px;
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
-.quote-container .logo img {
-    max-height: 100px;
-    width: auto;
-}
-.quote-container h3 {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    color: #004b25;
-    text-align: center;
-}
-.quote-container label {
-    display: block;
-    margin: 12px 0 4px;
-    font-weight: 500;
-}
-.quote-container input,
-.quote-container select,
-.quote-container textarea,
-.quote-container button {
-    width: 100%;
-    padding: 10px 14px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color .3s;
-}
-.quote-container input:invalid,
-.quote-container select:invalid,
-.quote-container textarea:invalid {
-    border-color: #d32f2f;
-}
-.quote-container input:focus,
-.quote-container select:focus,
-.quote-container textarea:focus {
-    outline: none;
-    border-color: #004b25;
-}
-.quote-container fieldset {
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-}
-.quote-container legend {
-    font-weight: 600;
-}
-.quote-container .services label {
-    font-weight: 400;
-}
-.quote-container button {
-    background: #006633;
-    color: #fff;
-    font-size: 16px;
+
+nav a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
 }
-.quote-container button:hover {
-    background: #004b25;
+
+nav .btn {
+    background: #e0a800;
+    padding: 8px 12px;
+    border-radius: 4px;
 }
-.quote-container .error-message {
-    display: none;
-    color: #d32f2f;
-    margin-top: -10px;
-    margin-bottom: 12px;
+
+.hero {
+    background: #1d3557;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #1d3557;
+}
+
+ul {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 15px;
     font-size: 0.9em;
 }
-.quote-container .invalid + .error-message {
-    display: block;
-}
-/* constrain all logo.png instances */
-.logo-image img,
-.quote-container .logo img {
-  max-width: 150px;    /* cap at 150px wide—you can lower if needed */
-  width: 100%;         /* scale down on narrow viewports */
-  height: auto;        /* preserve aspect ratio */
-  display: block;      /* margin auto will center it */
-  margin: 0 auto 20px; /* center + bottom spacing */
-}@media (max-width: 480px) {
-  .logo-image img,
-  .quote-container .logo img {
-    max-width: 100px;
-    margin-bottom: 16px;
-  }
-}
-/* ── Footer & Misc ─────────────────────────────────────────────────────── */
-/* … include your footer and any remaining styles … */
