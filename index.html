@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -399,7 +399,8 @@
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
         width: 100%;
         padding: 15px;
         border: 2px solid #e2e8f0;
@@ -411,7 +412,8 @@
     }
 
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
         outline: none;
         border-color: #ffd700;
     }
@@ -419,6 +421,13 @@
     .form-group textarea {
         height: 120px;
         resize: vertical;
+    }
+
+    .form-error {
+        color: #e53e3e;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
     }
 
     .submit-btn {
@@ -606,7 +615,6 @@
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-image">
-                        <!-- You'll need to upload your logo file to your GitHub repo and update the src path -->
                         <img src="logo.png" alt="King David Contracting Logo" onerror="this.style.display='none'">
                     </div>
                     <div class="logo-text">
@@ -661,7 +669,7 @@
             <div class="service-card">
                 <div class="service-icon">👥</div>
                 <h3>Labor Staffing</h3>
-                <p>We can fulfill labor and skilled labor shortages on the fly as well as serve as fill-in replacements for your service contracts. We continuously enrich our personell lists and are currently developing a performance review function for federal agencies </p>
+                <p>We can fulfill labor and skilled labor shortages on the fly as well as serve as fill-in replacements for your service contracts. We continuously enrich our personnel lists and are currently developing a performance review function for federal agencies.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📦</div>
@@ -677,9 +685,9 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>About King David Contracting LLC</h2>
-                <p>Based in New Jersey, King David Contracting LLC intends to  establish itself as a trusted federal resource with deep expertise in facilities management and comprehensive site services.</p>
-                <p>Our commitment to rapid innovation, regulatory compliance, and customer satisfaction distinguishes us as a trusted resource government agencies and prime contractors. We understand the complex requirements of federal contracting and deliver solutions that exceed expectations while maintaining full compliance with government standards.</p>
-                <p>From routine facility maintenance to complex multi-service contracts, our team is provides reliable, cost-effective solutions tailored to the unique needs of our customers operations.</p>
+                <p>Based in New Jersey, King David Contracting LLC intends to establish itself as a trusted federal resource with deep expertise in facilities management and comprehensive site services.</p>
+                <p>Our commitment to rapid innovation, regulatory compliance, and customer satisfaction distinguishes us as a trusted resource for government agencies and prime contractors. We understand the complex requirements of federal contracting and deliver solutions that exceed expectations while maintaining full compliance with government standards.</p>
+                <p>From routine facility maintenance to complex multi-service contracts, our team provides reliable, cost-effective solutions tailored to the unique needs of our customers' operations.</p>
             </div>
             <div class="stats">
                 <div class="stat">
@@ -706,72 +714,72 @@
 <section id="contact" class="contact">
     <div class="container">
         <h2 class="section-title">Contact King David Contracting</h2>
-        <p class="section-subtitle"> Need help? Ready to get registered and start federal contracting? Get in touch with our team today.</p>
+        <p class="section-subtitle">Need help? Ready to get registered and start federal contracting? Get in touch with our team today.</p>
         <div class="contact-content">
             <div class="contact-form">
-    <form id="contactForm" action="submit.php" method="post" novalidate>
-        <h3>Request a Quote or Custom Service</h3>
-        <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" required>
-            <div class="form-error">Please enter your name.</div>
-        </div>
-        <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-            <div class="form-error">Enter a valid email address.</div>
-        </div>
-        <div class="form-group">
-            <label for="organization">Organization</label>
-            <input type="text" id="organization" name="organization">
-        </div>
-        <div class="form-group">
-            <label for="location">Place of Performance</label>
-            <input type="text" id="location" name="location">
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
-            <label for="data">Accompanying Data? Subtier? Award ID?</label>
-            <input type="text" id="data" name="data">
-        </div>
-        <div class="form-group">
-            <label for="projecttype">Project Type *</label>
-            <select id="projecttype" name="projecttype" required>
-                <option value="">Choose One</option>
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-                <option value="state_federal">State Government / Federal Agency</option>
-                <option value="subcontract">Subcontract Management</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="services">Select Services</label>
-            <select id="services" name="services[]" multiple>
-                <option value="asphalt">Asphalt Coating & Sealing</option>
-                <option value="carpentry">Carpentry & Renovations</option>
-                <option value="masonry">Masonry & Stonework</option>
-                <option value="janitorial">Janitorial / Cleaning</option>
-                <option value="delivery">Delivery & Task Services</option>
-                <option value="landscaping">Landscaping & Groundskeeping</option>
-                <option value="staffing">On-Demand Staffing</option>
-                <option value="grant_writing">Grant writing, capability statements, operations agreement, more</option>
-                <option value="registration">Register your organization for financial assistance, contract opportunities, award compliance, build and integrate systems for parsing data, aquire certifications, manage users on SAM.gov</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="description">Describe Your Project or Needs</label>
-            <textarea id="description" name="description"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="customservice">Request a Service Not Listed</label>
-            <input type="text" id="customservice" name="customservice">
-        </div>
-        <button type="submit" class="submit-btn">Submit Request</button>
-    </form>
-</div>
+                <form id="contactForm" action="submit.php" method="post" novalidate>
+                    <h3>Request a Quote or Custom Service</h3>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="form-error">Please enter your name.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="form-error">Enter a valid email address.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input type="text" id="organization" name="organization">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Place of Performance</label>
+                        <input type="text" id="location" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Accompanying Data? Subtier? Award ID?</label>
+                        <input type="text" id="data" name="data">
+                    </div>
+                    <div class="form-group">
+                        <label for="projecttype">Project Type *</label>
+                        <select id="projecttype" name="projecttype" required>
+                            <option value="">Choose One</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="state_federal">State Government / Federal Agency</option>
+                            <option value="subcontract">Subcontract Management</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="services">Select Services</label>
+                        <select id="services" name="services[]" multiple>
+                            <option value="asphalt">Asphalt Coating & Sealing</option>
+                            <option value="carpentry">Carpentry & Renovations</option>
+                            <option value="masonry">Masonry & Stonework</option>
+                            <option value="janitorial">Janitorial / Cleaning</option>
+                            <option value="delivery">Delivery & Task Services</option>
+                            <option value="landscaping">Landscaping & Groundskeeping</option>
+                            <option value="staffing">On-Demand Staffing</option>
+                            <option value="grant_writing">Grant writing, capability statements, operations agreement, more</option>
+                            <option value="registration">Register your organization for financial assistance, contract opportunities, award compliance, build and integrate systems for parsing data, acquire certifications, manage users on SAM.gov</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe Your Project or Needs</label>
+                        <textarea id="description" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customservice">Request a Service Not Listed</label>
+                        <input type="text" id="customservice" name="customservice">
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
 
             <div class="contact-info">
                 <h3>Get In Touch</h3>
@@ -787,7 +795,7 @@
                     <div class="contact-icon">📞</div>
                     <div class="contact-details">
                         <strong>Phone</strong>
-                        +1.856.462.2627<br>
+                        +1.856.362.4496<br>
                         24/7 Emergency Services available 
                     </div>
                 </div>
@@ -815,8 +823,8 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-            <p>&copy; 2024 King David Contracting LLC. All rights reserved. | </p>
-            <p>This Website had been deployed as an open-source code repository and is hosted on Github Pages</a></p>
+            <p>&copy; 2024 King David Contracting LLC. All rights reserved.</p>
+            <p>This Website has been deployed as an open-source code repository and is hosted on Github Pages</p>
         </div>
     </div>
 </footer>
@@ -824,8 +832,8 @@
 <script>
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function () {
-            ();
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
@@ -836,15 +844,33 @@
         });
     });
 
-    // Form submission (you'll need to connect this to your backend)
-    document.querySelector('form').addEventListener('submit', function() {();
-        ('Thank you for your inquiry! We will contact you within 24 hours.');
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your inquiry! We will contact you within 24 hours.');
     });
 
-    // Add some interactivity to the mobile menu (basic version)
+    // Mobile menu functionality
     document.querySelector('.mobile-menu').addEventListener('click', function() {
         const nav = document.querySelector('nav');
         nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
     });
 </script>
-``'
+```
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>idk184</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>idk184</h1>
+  <div id="test"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
