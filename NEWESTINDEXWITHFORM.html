@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King David Contracting LLC - Solutions, Contracting & Facilities Management</title>
+    <meta name="description" content="New Jersey-based contractors providing solutions serving public and private sectors in facilities management, site services, general and subcontracting construction and maintenance services, temporary staffing, custom tasking and deliveries, AI integrations, SAM.gov registration, system management.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+        background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        backdrop-filter: blur(10px);
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logo-image {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        padding: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #ffd700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        line-height: 1.2;
+    }
+
+    .logo-subtitle {
+        font-size: 0.75rem;
+        color: #e2e8f0;
+        font-weight: normal;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+    }
+
+    nav a:hover {
+        color: #ffd700;
+        background: rgba(255, 215, 0, 0.1);
+    }
+
+    .mobile-menu {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, rgba(26, 54, 93, 0.95), rgba(45, 90, 135, 0.95)), 
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="%23f0f4f8"/><rect width="1200" height="800" fill="url(%23grid)"/><polygon fill="%23e2e8f0" points="0,800 1200,600 1200,800"/><polygon fill="%23cbd5e0" points="0,600 1200,400 1200,800 0,800"/></svg>');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px;
+        position: relative;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, transparent 0%, rgba(26, 54, 93, 0.3) 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        color: #ffd700;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.2s forwards;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.4s forwards;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.6s forwards;
+    }
+
+    .cta-button {
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        color: #1a365d;
+        padding: 15px 35px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    }
+
+    .cta-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        box-shadow: none;
+    }
+
+    .cta-secondary:hover {
+        background: white;
+        color: #1a365d;
+    }
+
+    /* Services Section */
+    .services {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        color: #1a365d;
+        position: relative;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 4rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .service-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ffd700, #ffed4e);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #1a365d, #2d5a87);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: white;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3);
+    }
+
+    .service-card h3 {
+        color: #1a365d;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .service-card p {
+        color: #666;
+        line-height: 1.7;
+    }
+
+    /* About Section */
+    .about {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+        background-size: 100px 100px;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .about-text h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        color: #ffd700;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #e2e8f0;
+        line-height: 1.8;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .stat {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ffd700;
+        display: block;
+    }
+
+    .stat-label {
+        color: #e2e8f0;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 100px 0;
+        background: #f8fafc;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+    }
+
+    .contact-form {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #1a365d;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        background: #f8fafc;
+        color: #333;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #ffd700;
+    }
+
+    .form-group textarea {
+        height: 120px;
+        resize: vertical;
+    }
+
+    .form-error {
+        color: #e53e3e;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
+    }
+
+    .submit-btn {
+        background: linear-gradient(45deg, #1a365d, #2d5a87);
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(26, 54, 93, 0.3);
+    }
+
+    .contact-info h3 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: #1a365d;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        color: #1a365d;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+
+    .contact-details {
+        flex-grow: 1;
+    }
+
+    .contact-details strong {
+        color: #1a365d;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+        background: #0f1419;
+        color: #cbd5e0;
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    .footer-content {
+        border-top: 1px solid #2d3748;
+        padding-top: 2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: block;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-content,
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+        }
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Add some visual flair */
+    .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .floating-elements::before,
+    .floating-elements::after {
+        content: '';
+        position: absolute;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-elements::before {
+        width: 60px;
+        height: 60px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    .floating-elements::after {
+        width: 80px;
+        height: 80px;
+        top: 60%;
+        right: 10%;
+        animation-delay: 3s;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+</style>
+```
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-image">
+                        <img src="logo.png" alt="King David Contracting Logo" onerror="this.style.display='none'">
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-name">King David Contracting LLC</div>
+                        <div class="logo-subtitle">Custom Solutions</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+```
+<section id="home" class="hero">
+    <div class="floating-elements"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-subtitle">New Jersey-Based Small Business</div>
+            <h1>Trusted Custom Solutions</h1>
+            <p>Your reliable partner for comprehensive facilities management, site services, labor staffing, B2B & private sector solutions across federal agencies and prime contractors nationwide.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button">Request Quote</a>
+                <a href="#services" class="cta-button cta-secondary">Our Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title">Our Core Services</h2>
+        <p class="section-subtitle">Specialized federal contracting services designed to meet the unique requirements of government agencies and prime contractors.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Facilities Management</h3>
+                <p>Comprehensive facilities management solutions including maintenance operations, building systems management, preventive maintenance programs, and facility optimization services for federal properties.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚧</div>
+                <h3>Site Services</h3>
+                <p>Professional concrete, asphalt, and landscaping services for federal facilities. From parking lot maintenance to complete site beautification and infrastructure improvements.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>Labor Staffing</h3>
+                <p>We can fulfill labor and skilled labor shortages on the fly as well as serve as fill-in replacements for your service contracts. We continuously enrich our personnel lists and are currently developing a performance review function for federal agencies.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>Courier & B2B Solutions</h3>
+                <p>Secure courier services and business-to-business logistics solutions tailored for federal agencies, including document delivery, supply chain management, and inter-agency transport.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About King David Contracting LLC</h2>
+                <p>Based in New Jersey, King David Contracting LLC intends to establish itself as a trusted federal resource with deep expertise in facilities management and comprehensive site services.</p>
+                <p>Our commitment to rapid innovation, regulatory compliance, and customer satisfaction distinguishes us as a trusted resource for government agencies and prime contractors. We understand the complex requirements of federal contracting and deliver solutions that exceed expectations while maintaining full compliance with government standards.</p>
+                <p>From routine facility maintenance to complex multi-service contracts, our team provides reliable, cost-effective solutions tailored to the unique needs of our customers' operations.</p>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">One Stop Shop</span>
+                    <span class="stat-label">across a unique subset of services and expertise</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Hubzone</span>
+                    <span class="stat-label">disadvantaged business enterprise, small business certifications pending</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Available</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">One contact</span>
+                    <span class="stat-label">across many fields of operations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact King David Contracting</h2>
+        <p class="section-subtitle">Need help? Ready to get registered and start federal contracting? Get in touch with our team today.</p>
+        <div class="contact-content">
+            <div class="contact-form">
+                
+<div class="contact-form">
+  <form id="quoteForm" action="https://formsubmit.co/info@kingdavidcontracting.com" method="POST" target="formframe">
+    <h3>Request a Quote or Custom Service</h3>
+
+    <div class="form-group">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="organization">Organization</label>
+      <input type="text" id="organization" name="organization">
+    </div>
+
+    <div class="form-group">
+      <label for="address">Place of Performance</label>
+      <input type="text" id="address" name="address">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="data">Accompanying Data? Subtier? Award ID?</label>
+      <input type="text" id="data" name="data">
+    </div>
+
+    <div class="form-group">
+      <label for="project_type">Project Type *</label>
+      <select id="project_type" name="project_type" required>
+        <option value="">Choose One</option>
+        <option value="residential">Residential</option>
+        <option value="commercial">Commercial</option>
+        <option value="government">State Government / Federal Agency</option>
+        <option value="subcontract">Subcontract Management</option>
+      </select>
+    </div>
+
+    <fieldset class="form-group">
+      <legend>Select Services</legend>
+      <label><input type="checkbox" name="services[]" value="Asphalt Coating"> Asphalt Coating & Sealing</label><br>
+      <label><input type="checkbox" name="services[]" value="Carpentry"> Carpentry & Renovations</label><br>
+      <label><input type="checkbox" name="services[]" value="Masonry"> Masonry & Stonework</label><br>
+      <label><input type="checkbox" name="services[]" value="Janitorial"> Janitorial / Cleaning</label><br>
+      <label><input type="checkbox" name="services[]" value="Delivery"> Delivery & Task Services</label><br>
+      <label><input type="checkbox" name="services[]" value="Landscaping"> Landscaping & Groundskeeping</label><br>
+      <label><input type="checkbox" name="services[]" value="Temporary Staffing"> On-Demand Staffing</label><br>
+      <label><input type="checkbox" name="services[]" value="Document Preparation"> Grant writing, capability statements, operations agreement, more</label><br>
+      <label><input type="checkbox" name="services[]" value="Entity Registration"> Register your organization for federal aid, compliance, certifications, and SAM.gov support</label>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="project_description">Describe Your Project or Needs</label>
+      <textarea id="project_description" name="project_description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="custom_service">Request a Service Not Listed</label>
+      <textarea id="custom_service" name="custom_service"></textarea>
+    </div>
+
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_autoresponse" value="Thank you for contacting King David Contracting!">
+
+    <button type="submit" class="submit-btn">Submit Request</button>
+  </form>
+
+  <iframe name="formframe" style="display:none;" onload="document.getElementById('success-message').style.display='block';"></iframe>
+  <div id="success-message" style="display:none; text-align:center; color:green; margin-top:1rem;">
+    ✅ Thank you! Your request has been submitted. We'll be in touch shortly.
+  </div>
+</div>
+
+            </div>
+
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <strong>Headquarters</strong>
+                        New Jersey, United States<br>
+                        Serving the East Coast and expanding
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <strong>Phone</strong>
+                        +1.856.362.4496<br>
+                        24/7 Emergency Services available 
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <strong>Email</strong>
+                        james@kingdavidcontracting.com<br>
+                        Response within one hour
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔒</div>
+                    <div class="contact-details">
+                        <strong>Security protocols</strong>
+                        <br>
+                        Full compliance with federal requirements
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 King David Contracting LLC. All rights reserved.</p>
+            <p>This Website has been deployed as an open-source code repository and is hosted on Github Pages</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Form submission
+    
+        alert('Thank you for your inquiry! We will contact you within 24 hours.');
+    });
+
+    // Mobile menu functionality
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    });
+</script>
+```
+
+</body>
+</html>
