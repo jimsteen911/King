@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - King David Contracting LLC</title>
+  <title>King David Contracting LLC - Custom Solutions</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
   <style>
     body {
@@ -45,61 +46,240 @@
       margin: auto;
       color: #ccc;
     }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .nav-links a {
+      color: #00d4ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #ff6b6b;
+    }
+    .feature-list {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+    }
+    .feature-list li {
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+    .contact-info {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .faq-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 1rem;
+    }
+    .faq-item h4 {
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+    }
+    .emoji {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>King David Contracting LLC</h1>
-    <p>Adaptable • Certified • Mission-Ready</p>
+    <p>Custom Solutions</p>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <section class="hero">
     <img src="logo.png" alt="King David Contracting Logo">
-    <h2>Our Services</h2>
-    <p>King David Contracting delivers highly responsive, multi-sector solutions across public and private sectors — specializing in readiness, resilience, and results.</p>
+    <h2>Custom Solutions</h2>
+    <p>Expert SAM.gov setup, grant writing, LLC formation, web design, and construction services</p>
+    <br>
+    <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView()">Get Started Today</button>
   </section>
 
-  <main class="container">
+  <main class="container" id="services">
+    <h2>Our Services</h2>
     <div class="grid">
       <section class="service-card">
-        <h3>Facilities Support & Maintenance</h3>
-        <p>Full-scope operations including janitorial, custodial, groundskeeping, and ongoing property support for commercial, industrial, and institutional clients.</p>
+        <span class="emoji">🏛️</span>
+        <h3>SAM.gov Profile Setup</h3>
+        <p>Complete SAM.gov registration and profile optimization to help your business access government contracting opportunities and streamline the federal registration process.</p>
+        <button onclick="document.getElementById('contact').scrollIntoView()">Learn More</button>
       </section>
-      <section class="service-card">
-        <h3>Site Preparation & Environmental Services</h3>
-        <p>Demolition, debris clearing, soil remediation, and construction support services. Safe, fast, and compliant with all regulatory standards.</p>
-      </section>
-      <section class="service-card">
-        <h3>Courier & Transport Logistics</h3>
-        <p>Document delivery, medical courier, food and parcel services — local and regional. HIPAA-aware and secure handling protocols.</p>
-      </section>
-      <section class="service-card">
-        <h3>Emergency Response & Rapid Deployment</h3>
-        <p>Task-force-ready teams trained for disaster mobilization, emergency labor staffing, and infrastructure recovery — when every second matters.</p>
-      </section>
-      <section class="service-card">
-        <h3>Unclaimed Asset Recovery</h3>
-        <p>Investigative services to identify, locate, and recover dormant assets and unclaimed property on behalf of rightful owners or agencies.</p>
-      </section>
-      <section class="service-card">
-        <h3>Capability Statements & Government Onboarding</h3>
-        <p>We help clients develop compliance-aligned capability packages, SAM.gov onboarding, and contracting documentation built to win.</p>
-      </section>
-    </div>
 
-    <section class="container">
-      <h2>Ready to Work With Us?</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Tell us about your project or contracting need..." required></textarea>
-        <button type="submit" onclick="event.preventDefault()">Submit Inquiry</button>
-      </form>
-    </section>
+```
+  <section class="service-card">
+    <span class="emoji">📝</span>
+    <h3>Grant Writing</h3>
+    <p>Professional grant writing services to help secure funding for your business or organization. We specialize in federal, state, and private grant applications.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Learn More</button>
+  </section>
+  
+  <section class="service-card">
+    <span class="emoji">🏢</span>
+    <h3>LLC Formation</h3>
+    <p>Complete LLC formation support including operating agreements, documentation, filing assistance, and ongoing compliance guidance for your new business.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Learn More</button>
+  </section>
+  
+  <section class="service-card">
+    <span class="emoji">🌐</span>
+    <h3>Web Design</h3>
+    <p>Professional web design services to establish your business's online presence with modern, mobile-responsive websites that attract and convert customers.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Learn More</button>
+  </section>
+  
+  <section class="service-card">
+    <span class="emoji">🔨</span>
+    <h3>Construction Services</h3>
+    <p>Professional construction and contracting services for residential and commercial projects. From renovations to new builds, we deliver quality craftsmanship.</p>
+    <button onclick="window.open('https://kingdavidcontracting.com', '_blank')">Visit Construction Site</button>
+  </section>
+  
+  <section class="service-card">
+    <span class="emoji">⚡</span>
+    <h3>Custom Solutions</h3>
+    <p>Special request services tailored to your unique business needs. We provide custom support and consulting for projects that require specialized expertise.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Contact Us</button>
+  </section>
+</div>
+
+<section id="about" class="container">
+  <h2>About King David Contracting LLC</h2>
+  <div class="service-card">
+    <p>Based in Vineland, New Jersey, King David Contracting LLC provides custom solutions for businesses looking to grow and succeed. We specialize in helping companies navigate complex regulatory requirements, access government contracting opportunities, and establish strong business foundations.</p>
+    <br>
+    <p>Our comprehensive approach combines business consulting expertise with practical construction services, making us your one-stop solution for both administrative and physical business needs. We understand that every business is unique, which is why we offer custom solutions tailored to your specific requirements.</p>
+  </div>
+  
+  <div class="feature-list">
+    <h3>Why Choose King David Contracting LLC</h3>
+    <ul>
+      <li>✓ Local New Jersey Business - Serving Vineland and surrounding areas</li>
+      <li>✓ Comprehensive Business Solutions Under One Roof</li>
+      <li>✓ Experienced in Government Contracting Processes</li>
+      <li>✓ Licensed Construction and Business Services</li>
+      <li>✓ Personalized Custom Solutions Approach</li>
+      <li>✓ Professional Documentation and Filing Support</li>
+    </ul>
+    <div style="text-align: center; margin-top: 2rem;">
+      <h3>🏢🔨</h3>
+      <h3>Your Business Growth Partner</h3>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="container">
+  <h2>Frequently Asked Questions</h2>
+  
+  <div class="faq-item">
+    <h4>How long does SAM.gov registration take?</h4>
+    <p>SAM.gov registration typically takes 7-10 business days once all required documentation is submitted. We ensure your application is complete and accurate to avoid delays and rejections.</p>
+  </div>
+  
+  <div class="faq-item">
+    <h4>What's included in your LLC formation service?</h4>
+    <p>Our LLC formation service includes name availability check, articles of organization filing, operating agreement drafting, EIN application, registered agent service, and guidance on ongoing compliance requirements.</p>
+  </div>
+  
+  <div class="faq-item">
+    <h4>Do you provide construction services in addition to business consulting?</h4>
+    <p>Yes! King David Contracting LLC offers both business consulting services and professional construction services. Visit our construction division at kingdavidcontracting.com for more details about our building and renovation services.</p>
+  </div>
+  
+  <div class="faq-item">
+    <h4>What makes your approach different?</h4>
+    <p>We provide "Custom Solutions" - meaning we tailor our services to your specific needs rather than offering one-size-fits-all packages. Whether you need business formation, government contracting setup, or construction services, we adapt our approach to fit your unique situation.</p>
+  </div>
+  
+  <div class="faq-item">
+    <h4>What are your service areas?</h4>
+    <p>We're based in Vineland, NJ and primarily serve South Jersey and the greater Philadelphia region. However, many of our business consulting services (like SAM.gov setup and LLC formation) can be provided remotely to clients nationwide.</p>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Get Your Custom Solution Today</h2>
+  <h3>Request a Free Consultation</h3>
+  <form>
+    <input type="text" name="name" placeholder="Full Name *" required>
+    <input type="email" name="email" placeholder="Email Address *" required>
+    <input type="tel" name="phone" placeholder="Phone Number">
+    <select name="service" required>
+      <option value="">Select a service</option>
+      <option value="sam">SAM.gov Profile Setup</option>
+      <option value="grant">Grant Writing</option>
+      <option value="llc">LLC Formation</option>
+      <option value="web">Web Design</option>
+      <option value="construction">Construction Services</option>
+      <option value="custom">Custom Solutions</option>
+      <option value="multiple">Multiple Services</option>
+    </select>
+    <textarea name="message" placeholder="Project Details" required></textarea>
+    <button type="submit" class="cta-button" onclick="event.preventDefault()">Send Message</button>
+  </form>
+  
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>📧 Email:</strong><br><a href="mailto:info@kingdavidcontracting.com">info@kingdavidcontracting.com</a></p>
+      <p><strong>📞 Phone:</strong><br><a href="tel:856.462.2627">856.462.2627</a></p>
+      <p><strong>📍 Address:</strong><br>3468 N West Ave<br>Vineland, NJ 08360</p>
+    </div>
+    
+    <div class="contact-info">
+      <h3>Business Details</h3>
+      <p><strong>🕒 Business Hours:</strong><br>Monday - Friday: 9:00 AM - 5:00 PM EST<br>Saturday: By Appointment</p>
+      <p><strong>⚡ Response Time:</strong><br>Within 24 hours<br>Same day for urgent requests</p>
+      <p><strong>🏆 Free Consultation:</strong><br>30-minute discovery call<br>No obligation assessment</p>
+    </div>
+  </div>
+</section>
+```
+
   </main>
 
   <footer>
-    <p>Contact: <a href="mailto:james@kingdavidcontracting.com">james@kingdavidcontracting.com</a> • (856) 462-2627</p>
+    <p>Contact: <a href="mailto:info@kingdavidcontracting.com">info@kingdavidcontracting.com</a> • 856.462.2627</p>
     <p>© 2025 King David Contracting LLC</p>
   </footer>
 </body>
