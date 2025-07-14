@@ -1,321 +1,528 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Asset Locator – Public Records Recovery</title>
-  <meta name="description" content="We help you recover unclaimed property with no risk and no upfront cost. Pay only if funds are recovered.">
-  <meta name="keywords" content="unclaimed property, asset recovery, escrow, state claims, no SSN, find money, New Jersey asset locator">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO Meta Tags -->
+
+  <title>The Asset Locator – Public Records Recovery | King David Contracting LLC</title>
+  <meta name="description" content="We help you recover unclaimed property with no risk and no upfront cost. Pay only if funds are recovered via secure escrow.">
+  <meta name="keywords" content="unclaimed property, asset recovery, escrow, state claims, no SSN, find money, New Jersey asset locator">
+  <meta name="author" content="King David Contracting LLC">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theassetlocator.com/">
+  <meta property="og:title" content="The Asset Locator – Public Records Recovery">
+  <meta property="og:description" content="We help you recover unclaimed property with no risk and no upfront cost. Pay only if funds are recovered via secure escrow.">
+  <meta property="og:image" content="https://theassetlocator.com/assetlocator.jpg">
+
+  <!-- Twitter -->
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://theassetlocator.com/">
+  <meta property="twitter:title" content="The Asset Locator – Public Records Recovery">
+  <meta property="twitter:description" content="We help you recover unclaimed property with no risk and no upfront cost. Pay only if funds are recovered via secure escrow.">
+  <meta property="twitter:image" content="https://theassetlocator.com/assetlocator.jpg">
+
+  <!-- Location Info -->
+
+  <meta name="geo.region" content="US-NJ">
+  <meta name="geo.placename" content="Vineland">
+
+  <link rel="canonical" href="https://theassetlocator.com/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8fafc;
-      color: #333;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(135deg, #1a365d, #2d5a87);
-      color: white;
-      padding: 1rem 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .logo-name {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ffd700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    .logo-subtitle {
-      font-size: 0.85rem;
-      color: #e2e8f0;
-    }
-    .menu-toggle {
-      font-size: 1.8rem;
-      cursor: pointer;
-      display: none;
-      color: #ffd700;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .nav-links a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-      color: #ffd700;
-    }
-    .hero {
-      margin-top: 80px;
-      background: linear-gradient(135deg, rgba(26,54,93,0.95), rgba(45,90,135,0.95)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.05"/></pattern></defs><rect width="1200" height="800" fill="%23f0f4f8"/><rect width="1200" height="800" fill="url(%23grid)"/></svg>') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 120px 20px 80px;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    section {
-      padding: 60px 20px;
-    }
-    .section-title {
-      font-size: 2rem;
-      text-align: center;
-      color: #1a365d;
-      margin-bottom: 2rem;
-    }
-    .steps ul {
-      list-style: none;
-      padding: 0;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .steps li {
-      padding-left: 1.5rem;
-      position: relative;
-      margin-bottom: 1.25rem;
-      font-size: 1.05rem;
-    }
-    .steps li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: green;
-      font-weight: bold;
-    }
-    .founder-story {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      font-size: 1.05rem;
+      background: #0a0a0a;
+      color: #fff;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
-      color: #444;
     }
-    .escrow {
-      background-color: #111;
-      color: #f5f5f5;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .escrow h2 {
-      color: #ffd700;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    .escrow .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(255,215,0,0.2);
-      margin-bottom: 30px;
-    }
-    .escrow .video-wrapper iframe {
-      position: absolute;
-      top:0; left:0; width:100%; height:100%;
-    }
-    .escrow p {
-      font-size: 1.1em;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0.75rem auto;
-    }
-    .escrow .attribution {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #888;
-    }
-    .form-section {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #f1f5f9;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-    .form-section p {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      color: #555;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-    form label { display: block; margin-bottom: 1rem; font-size: 0.95rem; color: #333; }
-    form input[type="checkbox"] { width: auto; margin-right: 0.5rem; vertical-align: middle; }
-    form button {
-      background: linear-gradient(45deg, #ffd700, #ffed4e);
-      color: #1a365d;
-      font-weight: bold;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 40px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-    form button:hover {
-      background: linear-gradient(45deg, #ffcc00, #ffe84e);
-    }
-    footer {
-      background: #0f1419;
-      color: #cbd5e0;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 60px;
-    }
-    footer a {
-      color: #ffd700;
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .header-content { flex-direction: column; align-items: flex-start; }
-      .menu-toggle { display: block; }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #2d5a87;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        text-align: right;
-        padding: 1rem;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      }
-      .nav-links.active { display: flex; }
-      .nav-links a {
-        padding: 0.75rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-    }
+
+```
+header, footer {
+  background-color: #111;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.hero-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.certification-badge {
+  background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: bold;
+  display: inline-block;
+  margin: 1rem 0;
+  animation: pulse 3s infinite;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3); }
+  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3); }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+
+.nav-links a:hover {
+  color: #ff6b6b;
+}
+
+.feature-list {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.feature-list li {
+  color: #ccc;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Steps List Styling */
+.steps ul {
+  list-style: none;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.steps li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  padding-left: 3rem;
+}
+
+.steps li::before {
+  content: "✔";
+  position: absolute;
+  left: 1rem;
+  color: #00d4ff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Founder Story Styling */
+.founder-story {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+/* Escrow Section */
+.escrow {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.escrow h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  margin-bottom: 2rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.escrow p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  color: #ccc;
+}
+
+.escrow .attribution {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.escrow .attribution a {
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+/* Form Styling */
+.form-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-section p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #00d4ff;
+  background: none;
+  border: none;
+}
+
+/* Mobile Improvements */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Accessibility Improvements */
+button:focus, a:focus {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+```
+
   </style>
 </head>
 <body>
-
   <header>
-    <div class="container header-content">
-      <div style="display: flex; align-items: center;">
-        <img src="assetlocator.jpg" alt="Asset Locator Logo" style="width:60px; height:60px; border-radius:50%; margin-right:15px; object-fit:cover; border:2px solid #ffd700;" />
-        <div class="logo-text">
-          <div class="logo-name">The Asset Locator</div>
-          <div class="logo-subtitle">A Service of King David Contracting LLC</div>
+    <div class="container">
+      <div class="hero-header">
+        <img src="assetlocator.jpg" alt="Asset Locator Logo">
+        <div>
+          <h1>The Asset Locator</h1>
+          <p style="color: #ccc; font-size: 0.9rem;">A Service of King David Contracting LLC</p>
         </div>
       </div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <nav class="nav-links" id="navMenu">
-        <a href="#">Home</a>
-        <a href="#">Federal, State, Federal Contractors</a>
-        <a href="#">Companies, Community, Nonprofits</a>
-        <a href="#">About Us</a>
-        <a href="#">Services</a>
+        <a href="#home">Home</a>
+        <a href="#federal">Federal, State, Federal Contractors</a>
+        <a href="#companies">Companies, Community, Nonprofits</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>We Locate Unclaimed Funds That Belong to You</h1>
-    <p>Legally sourced from public records. No Social Security Numbers. No risk. No upfront cost. Pay only if we recover funds — via escrow.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">Our Founder's Story</h2>
-    <div class="founder-story">
-      James Steenland, the founder of The Asset Locator, rose from homelessness and addiction to build a service that helps others reclaim what’s rightfully theirs. Four months clean and armed with nothing but an iPhone, he taught himself to code, navigated complex public databases, and founded this company to ensure that people with the fewest resources can still access unclaimed funds. His journey from poverty and despair fuels our commitment to transparency, integrity, and compassion.
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="certification-badge">💰 Zero Risk • No Upfront Cost</div>
+      <h2>We Locate Unclaimed Funds That Belong to You</h2>
+      <p>Legally sourced from public records. No Social Security Numbers. No risk. No upfront cost. Pay only if we recover funds — via secure escrow.</p>
+      <br>
+      <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">START YOUR FREE SEARCH</button>
     </div>
   </section>
 
-  <section class="steps">
-    <h2 class="section-title">How It Works</h2>
-    <ul>
-      <li>We search dozens of public databases using your name and known addresses; only you have your unique address.</li>
-      <li>You never need to give us your Social Security Number — ever.</li>
-      <li>If we find a valid claim, we notify you and present the documentation.</li>
-      <li>We handle all paperwork with your written consent and limited representation agreement.</li>
-      <li>Recovered funds are deposited into escrow and disbursed: <strong>80% to you, 20% to us.</strong></li>
-      <li>If nothing is recovered, you owe nothing. Zero risk.</li>
-    </ul>
-  </section>
+  <main class="container" id="about">
+    <section class="service-card">
+      <span class="emoji">📖</span>
+      <h2>Our Founder's Story</h2>
+      <div class="founder-story">
+        <p>James Steenland, the founder of The Asset Locator, rose from homelessness and addiction to build a service that helps others reclaim what's rightfully theirs. Four months clean and armed with nothing but an iPhone, he taught himself to code, navigated complex public databases, and founded this company to ensure that people with the fewest resources can still access unclaimed funds. His journey from poverty and despair fuels our commitment to transparency, integrity, and compassion.</p>
+      </div>
+    </section>
 
-  <section class="escrow">
-    <h2>Safe, Transparent Transactions with Escrow.com</h2>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/q7ypegQliMk"
-              title="Escrow.com Introduction"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-      </iframe>
+```
+<section class="steps" id="services">
+  <h2>How It Works</h2>
+  <ul>
+    <li>We search dozens of public databases using your name and known addresses; only you have your unique address.</li>
+    <li>You never need to give us your Social Security Number — ever.</li>
+    <li>If we find a valid claim, we notify you and present the documentation.</li>
+    <li>We handle all paperwork with your written consent and limited representation agreement.</li>
+    <li>Recovered funds are deposited into escrow and disbursed: <strong>80% to you, 20% to us.</strong></li>
+    <li>If nothing is recovered, you owe nothing. Zero risk.</li>
+  </ul>
+</section>
+
+<section class="escrow">
+  <h2>Safe, Transparent Transactions with Escrow.com</h2>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/q7ypegQliMk"
+            title="Escrow.com Introduction"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+  </div>
+  <p>Once you've created an account with <strong>Escrow.com</strong>, making secure transactions using your bank account becomes quick, clean, and transparent. Real-time status updates ensure you always know exactly where your money is in the process.</p>
+  <p>Contrary to popular belief, digital transactions are often safer. Escrow.com's fully documented system eliminates paper clutter and provides organized tracking from start to finish.</p>
+  <p>Need support? No problem. Backed by experienced escrow professionals, Escrow.com provides live phone assistance Monday to Friday (8:00 AM – 4:00 PM PST) and typically responds to emails within 12 hours.</p>
+  <p class="attribution">Content courtesy of <a href="https://www.escrow.com" target="_blank">Escrow.com</a></p>
+</section>
+```
+
+  </main>
+
+  <section id="contact" class="container">
+    <h2>Request a Free Search</h2>
+    <div class="form-section">
+      <p>We offer this service free or at a deeply reduced rate to New Jersey's homeless through NJ211 and the Cumberland County Homeless Shelter.</p>
+      <form action="#" method="POST">
+        <input type="text" name="full_name" placeholder="Full Legal Name, aliases" required>
+        <textarea name="addresses" placeholder="Known past addresses or states" required></textarea>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <label>
+          <input type="checkbox" name="agree_fee" required>
+          I agree to pay a 20% finder's fee on recovered property and authorize King David Contracting LLC to act as my limited representative or use escrow for disbursement.
+        </label>
+        <label>
+          <input type="checkbox" name="agree_contract" required>
+          I understand I will sign a limited contract upon discovery of funds, authorizing representation and/or escrow services.
+        </label>
+        <button type="submit" class="cta-button">Start My Free Search</button>
+      </form>
     </div>
-    <p>Once you’ve created an account with <strong>Escrow.com</strong>, making secure transactions using your bank account becomes quick, clean, and transparent. Real-time status updates ensure you always know exactly where your money is in the process.</p>
-    <p>Contrary to popular belief, digital transactions are often safer. Escrow.com’s fully documented system eliminates paper clutter and provides organized tracking from start to finish.</p>
-    <p>Need support? No problem. Backed by experienced escrow professionals, Escrow.com provides live phone assistance Monday to Friday (8:00 AM – 4:00 PM PST) and typically responds to emails within 12 hours.</p>
-    <p class="attribution">Content courtesy of <a href="https://www.escrow.com" target="_blank">Escrow.com</a></p>
-  </section>
-
-  <section class="form-section">
-    <h2 class="section-title">Request a Free Search</h2>
-    <p>We offer this service free or at a deeply reduced rate to New Jersey’s homeless through NJ211 and the Cumberland County Homeless Shelter.</p>
-    <form action="#" method="POST">
-      <input type="text" name="full_name" placeholder="Full Legal Name, aliases" required />
-      <textarea name="addresses" placeholder="Known past addresses or states" required></textarea>
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <label>
-        <input type="checkbox" name="agree_fee" required />
-        I agree to pay a 20% finder’s fee on recovered property and authorize King David Contracting LLC to act as my limited representative or use escrow for disbursement.
-      </label>
-      <label>
-        <input type="checkbox" name="agree_contract" required />
-        I understand I will sign a limited contract upon discovery of funds, authorizing representation and/or escrow services.
-      </label>
-      <button type="submit">Start My Free Search</button>
-    </form>
   </section>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 King David Contracting LLC. All rights reserved.</p>
-      <p><a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a></p>
+      <p>Contact: <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a></p>
       <p>This service is legally compliant under New Jersey law. You may also file claims directly with the State at no cost.</p>
     </div>
   </footer>
