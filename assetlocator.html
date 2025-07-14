@@ -24,10 +24,10 @@
   <!-- Twitter -->
 
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://theassetlocator.com/">
+  <meta property="twitter:url" content="https://kingdavidcontracting.com/assetlocator">
   <meta property="twitter:title" content="The Asset Locator – Public Records Recovery">
   <meta property="twitter:description" content="We help you recover unclaimed property with no risk and no upfront cost. Pay only if funds are recovered via secure escrow.">
-  <meta property="twitter:image" content="https://theassetlocator.com/assetlocator.jpg">
+  <meta property="twitter:image" content="assetlocator.jpg">
 
   <!-- Location Info -->
 
@@ -44,7 +44,7 @@
       line-height: 1.6;
     }
 
-```
+
 header, footer {
   background-color: #111;
   padding: 1rem 0;
@@ -430,7 +430,7 @@ button:focus, a:focus {
   outline: 2px solid #00d4ff;
   outline-offset: 2px;
 }
-```
+
 
   </style>
 </head>
@@ -447,10 +447,10 @@ button:focus, a:focus {
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <nav class="nav-links" id="navMenu">
         <a href="#home">Home</a>
-        <a href="#federal">Federal, State, Federal Contractors</a>
-        <a href="#companies">Companies, Community, Nonprofits</a>
-        <a href="#about">About Us</a>
         <a href="#services">Services</a>
+        <a href="#regiseter">Get my org registered!</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -478,7 +478,6 @@ button:focus, a:focus {
       </ul>
     </section>
 
-```
 <section class="escrow">
   <h2>Safe, Transparent Transactions with Escrow.com</h2>
   <div class="video-wrapper">
@@ -494,7 +493,7 @@ button:focus, a:focus {
   <p>Need support? No problem. Backed by experienced escrow professionals, Escrow.com provides live phone assistance Monday to Friday (8:00 AM – 4:00 PM PST) and typically responds to emails within 12 hours.</p>
   <p class="attribution">Content courtesy of <a href="https://www.escrow.com" target="_blank">Escrow.com</a></p>
 </section>
-```
+
 
   </main>
 
@@ -502,7 +501,7 @@ button:focus, a:focus {
     <h2>Request a Free Search</h2>
     <div class="form-section">
       <p>We offer this service free or at a deeply reduced rate to New Jersey's homeless through NJ211 and the Cumberland County Homeless Shelter.</p>
-      <form action="#" method="POST">
+      <form id="quoteForm" action="https://formsubmit.co/info@kingdavidcontracting.com" method="POST" target="formframe">
         <input type="text" name="full_name" placeholder="Full Legal Name, aliases" required>
         <textarea name="addresses" placeholder="Known past addresses or states" required></textarea>
         <input type="email" name="email" placeholder="Email Address" required>
@@ -518,6 +517,23 @@ button:focus, a:focus {
         <button type="submit" class="cta-button">Start My Free Search</button>
       </form>
     </div>
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_autoresponse" value="Thank you for contacting King David Contracting!">
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <!-- Hidden iframe to intercept submission -->
+  <iframe name="formframe" style="display:none;" onload="document.getElementById('success-message').style.display='block';"></iframe>
+
+  <!-- Inline success message -->
+  <div id="success-message">
+    ✅ Thank you! Your request has been submitted. We'll be in touch shortly.
+  </div>
+
+
+</body>
   </section>
 
   <footer>
