@@ -69,8 +69,10 @@ h1, h2, h3 {
 
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   position: relative;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
 }
 
 .hero-header {
@@ -78,7 +80,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
 }
 
@@ -91,28 +93,38 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin: 0;
+  font-weight: 800;
+}
+
+.hero h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 2rem 0;
+  font-weight: 600;
 }
 
 .hero p {
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
   color: #ccc;
-  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.8;
 }
 
 .certification-badge {
   background: linear-gradient(135deg, #00d4ff, #ff6b6b);
   color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: bold;
   display: inline-block;
-  margin: 1rem 0;
+  margin: 2rem 0;
   animation: pulse 3s infinite;
   box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @keyframes pulse {
@@ -134,6 +146,7 @@ h1, h2, h3 {
   text-decoration: none;
   transition: color 0.3s;
   padding: 0.5rem;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
@@ -179,14 +192,16 @@ h1, h2, h3 {
 .cta-button {
   background: linear-gradient(135deg, #00d4ff, #ff6b6b);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border: none;
-  border-radius: 8px;
-  font-size: clamp(1rem, 2vw, 1.1rem);
+  border-radius: 10px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .cta-button:hover {
@@ -233,18 +248,6 @@ h1, h2, h3 {
   color: #00d4ff;
   font-weight: bold;
   font-size: 1.2rem;
-}
-
-/* Founder Story Styling */
-.founder-story {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-  max-width: 900px;
-  margin: 0 auto 2rem;
 }
 
 /* Escrow Section */
@@ -362,7 +365,7 @@ input[type="checkbox"] {
 /* Mobile Improvements */
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
   }
   
   .hero-header {
@@ -457,27 +460,19 @@ button:focus, a:focus {
   </section>
 
   <main class="container" id="about">
-    <section class="service-card">
-      <span class="emoji">📖</span>
-      <h2>Our Founder's Story</h2>
-      <div class="founder-story">
-        <p>James Steenland, the founder of The Asset Locator, rose from homelessness and addiction to build a service that helps others reclaim what's rightfully theirs. Four months clean and armed with nothing but an iPhone, he taught himself to code, navigated complex public databases, and founded this company to ensure that people with the fewest resources can still access unclaimed funds. His journey from poverty and despair fuels our commitment to transparency, integrity, and compassion.</p>
-      </div>
+    <section class="steps" id="services">
+      <h2>How It Works</h2>
+      <ul>
+        <li>We search dozens of public databases using your name and known addresses; only you have your unique address.</li>
+        <li>You never need to give us your Social Security Number — ever.</li>
+        <li>If we find a valid claim, we notify you and present the documentation.</li>
+        <li>We handle all paperwork with your written consent and limited representation agreement.</li>
+        <li>Recovered funds are deposited into escrow and disbursed: <strong>80% to you, 20% to us.</strong></li>
+        <li>If nothing is recovered, you owe nothing. Zero risk.</li>
+      </ul>
     </section>
 
 ```
-<section class="steps" id="services">
-  <h2>How It Works</h2>
-  <ul>
-    <li>We search dozens of public databases using your name and known addresses; only you have your unique address.</li>
-    <li>You never need to give us your Social Security Number — ever.</li>
-    <li>If we find a valid claim, we notify you and present the documentation.</li>
-    <li>We handle all paperwork with your written consent and limited representation agreement.</li>
-    <li>Recovered funds are deposited into escrow and disbursed: <strong>80% to you, 20% to us.</strong></li>
-    <li>If nothing is recovered, you owe nothing. Zero risk.</li>
-  </ul>
-</section>
-
 <section class="escrow">
   <h2>Safe, Transparent Transactions with Escrow.com</h2>
   <div class="video-wrapper">
