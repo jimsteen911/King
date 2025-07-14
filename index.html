@@ -423,50 +423,76 @@ button:focus, a:focus {
   <section id="contact" class="container">
     <h2>Ready to Win Your Next Federal Contract?</h2>
     <h3>Request a Free Consultation</h3>
-    <form id="quoteForm" action="93f26ab1eec3a15e11787d6a6a99cd6c" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="New Federal Contract Inquiry">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://kingdavidcontracting.com/thank-you.html">
+     <form id="quoteForm" action="https://formsubmit.co/info@kingdavidcontracting.com" method="POST" target="formframe">
+    <h3>Request a Quote or Custom Service</h3>
 
+    <label for="name">Name *</label>
+    <input type="text" id="name" name="name" required>
+    <div class="error-message">Please enter your name.</div>
 
-  <label for="name">Full Name *</label>
-  <input type="text" id="name" name="name" required>
-  
-  <label for="email">Email Address *</label>
-  <input type="email" id="email" name="email" required>
-  
-  <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="phone">
-  
-  <label for="organization">Organization Type *</label>
-  <select id="organization" name="organization" required>
-    <option value="">Select organization type</option>
-    <option value="business">Business</option>
-    <option value="nonprofit">Nonprofit Organization</option>
-    <option value="government">Government Agency</option>
-    <option value="other">Other</option>
-  </select>
-  
-  <label for="service">Service Interest *</label>
-  <select id="service" name="service" required>
-    <option value="">Select a service</option>
-    <option value="federal-contracting">Federal Contracting</option>
-    <option value="facility-support">Facility Support Services</option>
-    <option value="renovation-demo">Renovation & Demo Services</option>
-    <option value="handyman">Public & Private Handyman Services</option>
-    <option value="rapid-response">Rapid Response & Technology Integration</option>
-    <option value="sam">SAM.gov Profile Setup</option>
-    <option value="grant">Grant Writing Services</option>
-    <option value="llc">LLC Formation & Business Setup</option>
-    <option value="web">Web Design & Digital Presence</option>
-    <option value="multiple">Multiple Services</option>
-  </select>
-  
-  <label for="message">Federal Contract Needs & Project Details *</label>
-  <textarea id="message" name="message" rows="5" required placeholder="Tell us about your federal contract needs, project requirements, or how we can help your organization succeed..."></textarea>
-  
-  <button type="submit" class="cta-button">Send Message</button>
-</form>
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required>
+    <div class="error-message">Enter a valid email address.</div>
+
+    <label for="organization">Organization</label>
+    <input type="text" id="organization" name="organization">
+
+    <label for="address">Place of Performance</label>
+    <input type="text" id="address" name="address">
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="data">Accompanying Data? Subtier? Award ID?</label>
+    <input type="text" id="data" name="data">
+
+    <label for="project_type">Project Type *</label>
+    <select id="project_type" name="project_type" required>
+      <option value="">Choose One</option>
+      <option value="residential">Residential</option>
+      <option value="commercial">Commercial</option>
+      <option value="government">State Government / Federal Agency</option>
+      <option value="subcontract">Subcontract Management</option>
+    </select>
+
+    <fieldset class="services">
+      <legend>Select Services</legend>
+      <label><input type="checkbox" name="services[]" value="Asphalt Coating"> Asphalt Coating & Sealing</label>
+      <label><input type="checkbox" name="services[]" value="Carpentry"> Carpentry & Renovations</label>
+      <label><input type="checkbox" name="services[]" value="Masonry"> Masonry & Stonework</label>
+      <label><input type="checkbox" name="services[]" value="Janitorial"> Janitorial / Cleaning</label>
+      <label><input type="checkbox" name="services[]" value="Delivery"> Delivery & Task Services</label>
+      <label><input type="checkbox" name="services[]" value="Landscaping"> Landscaping & Groundskeeping</label>
+      <label><input type="checkbox" name="services[]" value="Temporary Staffing"> On-Demand Staffing</label>
+      <label><input type="checkbox" name="services[]" value="Document Preparation"> Grant writing, capability statements, operations agreement, more </label>
+      <label><input type="checkbox" name="services[]" value="Entity Registration"> Register your organization for financial assistance, contract opportunities, award compliance, build and integrate systems for parsing data, acquire certifications, manage users on SAM.gov</label>
+    </fieldset>
+
+    <label for="project_description">Describe Your Project or Needs</label>
+    <textarea id="project_description" name="project_description" rows="5" placeholder="Give us details to tailor our quote..."></textarea>
+
+    <label for="custom_service">Request a Service Not Listed</label>
+    <textarea id="custom_service" name="custom_service" rows="4" placeholder="We’ll try to accommodate aligned custom requests..."></textarea>
+
+    <!-- Hidden Config Fields -->
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_autoresponse" value="Thank you for contacting King David Contracting!">
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <!-- Hidden iframe to intercept submission -->
+  <iframe name="formframe" style="display:none;" onload="document.getElementById('success-message').style.display='block';"></iframe>
+
+  <!-- Inline success message -->
+  <div id="success-message">
+    ✅ Thank you! Your request has been submitted. We'll be in touch shortly.
+  </div>
+</div>
+
+</body>
+</html>
 
 <div class="contact-grid">
   <div class="contact-info">
