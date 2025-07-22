@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | King David Contracting LLC</title>
+  <meta name="description" content="Learn more about King David Contracting LLC and The Asset Locator team." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    .hero-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00d4ff;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    }
+
+    h1, h2, h3 {
+      background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav.nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+
+    nav.nav-links a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav.nav-links a:hover {
+      color: #ff6b6b;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #00d4ff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 1rem auto;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        padding: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 1.5rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-header">
+    <img src="../assetlocator.jpg" alt="Logo" />
+    <div>
+      <h1>King David Contracting</h1>
+      <p style="color: #ccc; font-size: 0.9rem;">A Service of The Asset Locator</p>
+    </div>
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav class="nav-links" id="navMenu">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="federal.html">Federal</a>
+    <a href="community.html">Community</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>About Us</h2>
+  <p>King David Contracting LLC is a federal contractor and public service business operated by James Steenland. The company is built from the ground up with a mission to recover value — in properties, people, and public records.</p>
+  <p>We’re proudly based in New Jersey and specialize in asset location, recovery assistance, construction labor, and disaster support. Whether it’s unclaimed property or underutilized potential, we help bring it home.</p>
+</main>
+
+<footer>
+  <p>&copy; 2025 King David Contracting LLC. All rights reserved.</p>
+  <p>Contact: <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a></p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
