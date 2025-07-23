@@ -501,35 +501,41 @@ button:focus, a:focus {
     <h2>Request a Free Search</h2>
     <div class="form-section">
       <p>We offer this service free or at a deeply reduced rate to New Jersey's homeless through NJ211 and the Cumberland County Homeless Shelter.</p>
-      <form id="quoteForm" action="https://formsubmit.co/info@kingdavidcontracting.com" method="POST" target="formframe">
-        <input type="text" name="full_name" placeholder="Full Legal Name, aliases" required>
-        <textarea name="addresses" placeholder="Known past addresses or states" required></textarea>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <label>
-          <input type="checkbox" name="agree_fee" required>
-          I agree to pay a 20% finder's fee on recovered property and authorize King David Contracting LLC to act as my limited representative or use escrow for disbursement.
-        </label>
-        <label>
-          <input type="checkbox" name="agree_contract" required>
-          I understand I will sign a limited contract upon discovery of funds, authorizing representation and/or escrow services.
-        </label>
-        <button type="submit" class="cta-button">Start My Free Search</button>
-      </form>
-    </div>
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_autoresponse" value="Thank you for contacting King David Contracting!">
+<form id="quoteForm" action="https://formsubmit.co/info@kingdavidcontracting.com" method="POST" target="formframe">
+  <input type="text" name="name" placeholder="Full Legal Name, aliases" required>
+  <textarea name="addresses" placeholder="Known past addresses or states" required></textarea>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
 
+  <p><strong>Authorization:</strong> By submitting this form, I authorize The Asset Locator, a service of King David Contracting LLC, to pursue unclaimed property on my behalf. I understand that I may file directly with the State of New Jersey at no cost. I acknowledge this submission as my electronic signature under UETA (Uniform Electronic Transactions Act) and ESIGN Act.</p>
 
-  <!-- Hidden iframe to intercept submission -->
-  <iframe name="formframe" style="display:none;" onload="document.getElementById('success-message').style.display='block';"></iframe>
+  <input type="text" name="signature" placeholder="Type your full name as your signature" required>
 
-  <!-- Inline success message -->
-  <div id="success-message">
-    ✅ Thank you! Your request has been submitted. We'll be in touch shortly.
-  </div>
+  <label>
+    <input type="checkbox" name="agree_fee" required>
+    I agree to pay a 20% finder's fee on recovered property and authorize King David Contracting LLC to act as my limited representative or use escrow for disbursement.
+  </label>
 
+  <label>
+    <input type="checkbox" name="agree_contract" required>
+    I understand I will sign a limited contract upon discovery of funds, authorizing representation and/or escrow services.
+  </label>
+
+  <!-- Formsubmit.io hidden settings -->
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_autoresponse" value="Thank you for contacting King David Contracting!">
+
+  <button type="submit" class="cta-button">Start My Free Search</button>
+</form>
+
+<!-- Hidden iframe to intercept submission -->
+<iframe name="formframe" style="display:none;" onload="document.getElementById('success-message').style.display='block';"></iframe>
+
+<!-- Inline success message -->
+<div id="success-message" style="display:none; color:#00ffcc; font-weight:bold; padding:1rem 0;">
+  ✅ Thank you! Your request has been submitted. We'll be in touch shortly.
+</div>
 
 </body>
   </section>
