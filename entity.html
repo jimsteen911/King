@@ -19,6 +19,7 @@
         color: #ffffff;
         line-height: 1.6;
         overflow-x: hidden;
+        min-height: 100vh;
     }
 
     .header {
@@ -176,6 +177,7 @@
         padding: 5rem 0;
         max-width: 1200px;
         margin: 0 auto;
+        background: transparent;
     }
 
     .container {
@@ -350,6 +352,7 @@
     .contact-info {
         text-align: center;
         margin-top: 3rem;
+        background: transparent;
     }
 
     .contact-info h3 {
@@ -376,6 +379,27 @@
     .fade-in {
         opacity: 1 !important;
         transform: translateY(0) !important;
+    }
+
+    /* Ensure footer has consistent background */
+    footer {
+        background: transparent;
+        padding: 2rem 0;
+    }
+
+    /* Make sure any remaining white backgrounds are transparent */
+    * {
+        background-color: transparent;
+    }
+
+    /* Override any white backgrounds that might appear */
+    body * {
+        background-color: transparent;
+    }
+
+    /* Ensure main content area maintains dark theme */
+    main {
+        background: transparent;
     }
 
     @media (max-width: 768px) {
